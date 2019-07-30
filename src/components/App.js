@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Stopwatch from './Stopwatch';
+import Countdown from './Countdown';
 
-class App extends Component {
-  render() {
-    return <div>Hello, world</div>;
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <Stopwatch />
+      <Countdown />
+    </div>
+  );
+};
 
 export default App;

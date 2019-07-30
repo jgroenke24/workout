@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   module: {
     rules: [
@@ -12,5 +14,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ]
 }

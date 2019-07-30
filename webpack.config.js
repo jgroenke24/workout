@@ -10,18 +10,18 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
-            }
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+            },
           },
-          { loader: 'eslint-loader' }
-        ]
-      }
-    ]
+          { loader: 'eslint-loader' },
+        ],
+      },
+    ],
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
-  ]
-}
+      template: 'src/index.html',
+    }),
+  ],
+};

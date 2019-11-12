@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Button from './Button';
+
 // Default countdown timer is 30 secs
 const DEFAULT_TIME = 30000;
 
@@ -184,49 +186,49 @@ export default class CircleCountdown extends Component {
           {minutes} : {seconds}
         </TimeDisplay>
         <div>
-          <button
+          <Button
             type="button"
             disabled={timerRemaining <= 15000}
             onClick={() => this.adjustTimer(-15)}
           >
             -15s
-          </button>
-          <button
+          </Button>
+          <Button
             type="button"
             disabled={timerRemaining <= 30000}
             onClick={() => this.adjustTimer(-30)}
           >
             -30s
-          </button>
-          <button type="button" onClick={() => this.adjustTimer(15)}>
+          </Button>
+          <Button type="button" onClick={() => this.adjustTimer(15)}>
             +15s
-          </button>
-          <button type="button" onClick={() => this.adjustTimer(30)}>
+          </Button>
+          <Button type="button" onClick={() => this.adjustTimer(30)}>
             +30s
-          </button>
+          </Button>
           {!timerOn && (timerTime === 0 || timerTime === timerRemaining) && (
-            <button type="button" onClick={this.startTimer}>
+            <Button type="button" onClick={this.startTimer}>
               Start
-            </button>
+            </Button>
           )}
           {timerOn && timerRemaining >= 1000 && (
-            <button type="button" onClick={this.stopTimer}>
+            <Button type="button" onClick={this.stopTimer}>
               Stop
-            </button>
+            </Button>
           )}
           {!timerOn &&
             (timerTime !== 0 &&
               timerTime !== timerRemaining &&
               timerRemaining !== 0) && (
-              <button type="button" onClick={this.startTimer}>
+              <Button type="button" onClick={this.startTimer}>
                 Resume
-              </button>
+              </Button>
             )}
           {(!timerOn || timerRemaining < 1000) &&
             (timerTime !== timerRemaining && timerTime > 0) && (
-              <button type="button" onClick={this.resetTimer}>
+              <Button type="button" onClick={this.resetTimer}>
                 Reset
-              </button>
+              </Button>
             )}
         </div>
       </StyledCircleCountdown>

@@ -12,13 +12,13 @@ const Container = styled.div`
   max-width: 960px;
 `;
 
-export default function Section({ withContainer, children }) {
+const Section = ({ withContainer, children }) => {
   return (
     <StyledSection>
       {withContainer ? <Container>{children}</Container> : { children }}
     </StyledSection>
   );
-}
+};
 
 Section.defaultProps = {
   withContainer: false,
@@ -28,3 +28,5 @@ Section.propTypes = {
   withContainer: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
+
+export default Section;

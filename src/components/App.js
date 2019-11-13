@@ -7,13 +7,13 @@ import CircleCountdown from './CircleCountdown';
 
 const App = () => {
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Stopwatch />
       {/* <Countdown /> */}
       {/* <RequestCountdown /> */}
       <CircleCountdown />
-    </div>
+    </>
   );
 };
 
